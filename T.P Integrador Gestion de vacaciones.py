@@ -75,4 +75,31 @@ def solicitar_vacaciones(empleado):
         print("Error: Debe ingresar un número entero."
 
 #Programa Principal
-empleados = cargar_empleados()
+empleados = cargar_empleados() #Carga la lista de empleados
+
+while True: #Menu Interactivo
+
+    print("CHATBOT DE GESTIÓN DE VACACIONES")
+    print("1. Solicitar vacaciones")
+    print("2. Salir")
+
+    opcion = input("Seleccione una opción: ") #Pide una opción del menú
+
+    if opcion == "1": 
+        dni = validar_dni() #Verifica y busca la identidad del empleado
+        empleado = buscar_empleado(empleados, dni)
+
+        if empleado:
+            print(f"Nombre: {empleado['nombre']}") #Muestra los datos del empleado
+            print(f"Días disponibles: {empleado['dias']}")
+            solicitar_vacaciones(empleado) #Solicita las vacaciones
+
+        else:
+            print("Error: Empleado no encontrado.") #Muestra por pantalla que el empleado no está registrado
+
+    elif opcion == "2":
+        print("Gracias por utilizar el sistema.") #Cierra el programa
+        break
+
+    else:
+        print("Error: Opción inválida.")
