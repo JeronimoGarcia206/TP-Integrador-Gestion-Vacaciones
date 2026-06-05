@@ -46,5 +46,33 @@ def cargar_empleados():
 
     return empleados
 
+def buscar_empleado(empleados, dni):
+
+    if dni in empleados:
+        return empleados[dni]
+
+    return None
+
+def solicitar_vacaciones(empleado):
+
+    try:
+        dias_solicitados = int(
+            input("Ingrese la cantidad de días que desea solicitar: ")
+        )
+
+        if dias_solicitados <= 0:
+            print("Debe ingresar una cantidad mayor a 0.")
+
+        elif dias_solicitados <= empleado["dias"]:
+            print("Solicitud aprobada.")
+            print("Vacaciones registradas correctamente.")
+
+        else:
+            print("Solicitud rechazada.")
+            print("No posee días suficientes.")
+
+    except ValueError:
+        print("Error: Debe ingresar un número entero."
+
 #Programa Principal
 empleados = cargar_empleados()
