@@ -1,0 +1,4 @@
+43701109,Juan Pérez,15
+38790777,Ana Gómez,10
+40500612,Pedro López,0
+39456262,María García,20
