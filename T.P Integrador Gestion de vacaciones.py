@@ -17,9 +17,7 @@ def validar_dias():
     while True:
 
         try:
-            dias = int(
-                input("Ingrese la cantidad de días que desea solicitar: ")
-            )
+            dias = int(input("Ingrese la cantidad de días que desea solicitar: "))
 
             if dias > 0:
                 return dias
